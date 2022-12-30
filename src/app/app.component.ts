@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,11 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Asincrona-8';
 
-  constructor(){}
-  
-  mostrar(nombre:String, apellido:String, edad:String){
+  clientes: any[] = [];
 
-    console.log(nombre, apellido, edad);
+  cliente: any = {};
+
+  nombre: String = " ";
+  apellido: String = " ";
+  edad: number = 0;
+
+  mostrar(){
+    this.clientes.push(this.cliente);
+
+    this.cliente = {};
   }
     
 }

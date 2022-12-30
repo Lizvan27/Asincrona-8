@@ -1,18 +1,18 @@
 <div class="container">
   <div>
-    <label for="">Nombre</label>
-    <input #nombre type="text" placeholder="Ingrese nombre">
+    <label for="nombre">Nombre</label>
+    <input ngModel="cliente.nombre" type="text" id="nombre" name="nombre" placeholder="Ingrese nombre">
   </div>
   <div>
-    <label for="">Apellido</label>
-    <input #apellido type="text" placeholder="Ingrese apellido">
+    <label for="apellido">Apellido</label>
+    <input ngModel="cliente.apellido" type="text" id="apellido" name="apellido" placeholder="Ingrese apellido">
   </div>
   <div>
-    <label for="">Edad</label>
-    <input #edad type="text" placeholder="Ejemplo: 18">
+    <label for="edad">Edad</label>
+    <input ngModel="cliente.edad" type="number" id="edad"  name="edad" placeholder="Ejemplo: 18">
   </div>
   <div>
-    <button type="button" (click)="mostrar(nombre.value, apellido.value, edad.value)" class="btn btn-primary">Agregar</button>
+    <button type="button" (click)="mostrar()" class="btn btn-primary">Agregar</button>
   </div>
 </div>
 <div class="container">
@@ -22,8 +22,10 @@
       <th scope="col">Apellido</th>
       <th scope="col">Edad</th>
     </thead>
-    <tbody>
-
+    <tbody *ngFor="let cliente of clientes ">
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.apellido}}</td>
+      <td>{{cliente.edad}}</td>
     </tbody>
   </table>
 </div>
