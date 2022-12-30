@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Asincrona-8';
+
+  constructor(){}
+  
+  mostrar(nombre:String, apellido:String, edad:String){
+
+    console.log(nombre, apellido, edad);
+  }
+    
 }
+
